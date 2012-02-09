@@ -47,3 +47,14 @@ The "..." in the end is extra text that is ignored.
 The source from Fred may be accessed with the call:
 
   Block[] blocks = Block.get(Info.DIR, "Weirdo");
+
+
+Netbeans seems to be strangely flakey when referencing an annotation 
+processing project, deleting generated class files, seemingly on a whim.
+Feel free to educate me.  In any case running the project from the command
+line always works, something along these lines:
+
+> cd ~/jripper/jripper_demo
+> java -cp ../jripper/dist/jripper.jar:dist/jripper_demo.jar \
+     srcbin.jripper_demo.Demo
+
