@@ -1,0 +1,49 @@
+JRipper - J does not stand for Jack.  Whew.
+
+This project implements a simple java annotation for use (at least) in building
+demo applications.  It allows marking source code that you would like to have 
+the actual text of, and makes it available as strings that may be used in the
+program.  This is helpful for pulling up source code in a popup, for instance.
+
+There are 2 netbeans projects here. The first 'jripper' contains the
+annotation and annotation processor.  The second 'jripper_demo', well, I'll
+let you guess.
+
+The JRipper annotation is a package-level annotation which means it goes in its
+own little file named package-info.java which looks something like this:
+
+
+@JRipper(dirName = Info.DIR)    // This is how you annotate a package.
+package srcbin.jripper_demo;
+import srcbin.jripper.JRipper;  // Import the code ripper
+
+class Info {
+   /** This is the directory to throw the code blocks in. */
+   static final String DIR = "srcbin.jripper.code_blocks";
+}
+
+
+You could just use a String for the directory, but that would let you make
+typos, so you wouldn't do that. ;-)
+
+
+All the files in the package will get scanned. 
+
+A block of text to be saved is marked with 2 distinctive comments.  The 
+start looks like this: 
+     ///+ Fred ...
+or
+    ///+ Fred(3)...
+The end looks like this:
+    ///-...
+
+In this example "Fred" is the class that will be created holding an array
+of Block objects holding the source.  "3" is a priority that will be used
+when sorting the blocks in Fred.  If not given 0 is used.  The source file
+and original file order used as secondary and tertiary sort keys.  The "..."
+in the start is some extra text you may collect and do with what you will.
+The "..." in the end is extra text that is ignored.
+
+The source from Fred may be accessed with the call:
+
+  Block[] blocks = Block.get(Info.DIR, "Weirdo");
