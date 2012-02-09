@@ -15,7 +15,7 @@ own little file named package-info.java which looks something like this:
 
 @JRipper(dirName = Info.DIR)    // This is how you annotate a package.
 package srcbin.jripper_demo;
-import srcbin.jripper.JRipper;  // Import the code ripper
+import srcbin.jripper.annotation.JRipper;  // Import the code ripper
 
 class Info {
    /** This is the directory to throw the code blocks in. */
@@ -51,7 +51,7 @@ The source from Fred may be accessed with the call:
 
 Netbeans seems to be strangely flakey when referencing an annotation 
 processing project, deleting generated class files, seemingly on a whim.
-Feel free to educate me.  In any case running the project from the command
+Feel free to educate me.  In any case, running the project from the command
 line always works, something along these lines:
 
 > cd ~/jripper/jripper_demo
