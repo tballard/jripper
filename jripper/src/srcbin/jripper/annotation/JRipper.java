@@ -1,7 +1,7 @@
 /*
  * srcbin
  */
-package srcbin.jripper;
+package srcbin.jripper.annotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

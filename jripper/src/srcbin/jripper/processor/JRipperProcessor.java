@@ -28,7 +28,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.annotation.processing.Filer;
 import javax.tools.JavaFileObject;
-import srcbin.jripper.JRipper;
+import srcbin.jripper.annotation.JRipper;
 
 /**
  * Processor for ripping blocks from text files.  The purpose I had in
@@ -37,7 +37,7 @@ import srcbin.jripper.JRipper;
  * @author tballard
  */
 @SupportedSourceVersion(SourceVersion.RELEASE_6)
-@SupportedAnnotationTypes("srcbin.jripper.JRipper")
+@SupportedAnnotationTypes("srcbin.jripper.annotation.JRipper")
 public class JRipperProcessor extends AbstractProcessor {
    private AtomicInteger _idGen = new AtomicInteger();
    private Trees _trees;
