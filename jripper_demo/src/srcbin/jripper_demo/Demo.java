@@ -7,7 +7,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.WindowConstants;
 import srcbin.jripper.processor.Block;
-import srcbin.jripper.processor.Source;
 
 /**
  * Demo of text ripping. The annotation is in package-info.java
@@ -48,7 +47,7 @@ public class Demo extends JFrame {
    /** How to get Strings of Source! */
    private static String get() {
       // This is how you grab the blocks
-      Block[] blocks = Source.get(Info.DIR, "Weirdo");
+      Block[] blocks = Block.get(Info.DIR, "Weirdo");
       return new StringBuilder().
          append("<html><pre>Code of method getString():\n").
          append(blocks[0].getHtmlText(true)).
