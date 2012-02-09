@@ -49,7 +49,7 @@ The source from Fred may be accessed with the call:
   Block[] blocks = Block.get(Info.DIR, "Weirdo");
 
 
-Netbeans seems to be strangely flakey when referencing an annotation 
+Netbeans seems to be strangely flakey when referencing an annotation- 
 processing project, deleting generated class files, seemingly on a whim.
 Feel free to educate me.  In any case, running the project from the command
 line always works, something along these lines:
@@ -58,3 +58,5 @@ line always works, something along these lines:
 > java -cp ../jripper/dist/jripper.jar:dist/jripper_demo.jar \
      srcbin.jripper_demo.Demo
 
+It must be said that when I just check out the code and run it, it runs okay
+right off the bat, so it must be some configuration subtlety.
